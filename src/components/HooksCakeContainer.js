@@ -7,11 +7,11 @@ import {buyCake} from '../redux/index'
 function HooksCakeContainer() {
     //Similar to mapStateToProps
     //access the redux store and assign numOfCakes to a const variable
-    const numOfCakes = useSelector(state => state.numOfCakes)
+    const numOfCakes = useSelector(state => state.cake.numOfCakes)
     const dispatch = useDispatch()
     return (
         <div>
-            <h2>Number of cakes - {numOfCakes}</h2>
+            <h2>(Hooks container)Number of cakes - {numOfCakes}</h2>
             <button onClick={() => dispatch(buyCake())}>Buy cake</button>
         </div>
     )
