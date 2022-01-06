@@ -6,6 +6,7 @@ import CakeContainer from './components/CakeContainer'
 import HooksCakeContainer from './components/HooksCakeContainer'
 import IceCreamContainer from './components/IceCreamContainer'
 import NewCakeContainer from './components/NewCakeContainer'
+import ItemContainer from './components/ItemContainer'
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
         <HooksCakeContainer/>
         <IceCreamContainer/>
         <NewCakeContainer/>
+
+        {/* conditionaly render itemContainer component by passing a prop from component to mapStateToProps() and mapDispatchToProps().
+        based on prop map state to props cake or ice cream
+        */}
+        <ItemContainer cake/>
       </div>
     </Provider>
   );

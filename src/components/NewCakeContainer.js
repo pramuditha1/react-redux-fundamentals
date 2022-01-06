@@ -8,7 +8,7 @@ function NewCakeContainer(props) {
         <div>
             <h2>Number of cakes {props.numOfCakes}</h2>
             <input type="text" value={number} onChange={(e) => setnumber(e.target.value)}/>
-            <button onClick={() => props.buyCake(number)}>Buy Cakes</button>
+            <button onClick={() => props.buyCakePropFunc(number)}>Buy Cakes</button>
         </div>
     )
 }
@@ -20,7 +20,7 @@ for that we use mapStateToProps function taking state as a parameter and return 
 this function add additinal prop numOfCakes to the component which value is stored in redux store
 
 ---- react redux documentation tells about selectors. 
----- what selector do is a seperate function having mapStateToProps functions
+---- what selector do is a seperate function having mapStateToProps functions using hooks
 */
 const mapStateToProps = state => {
     return {
@@ -35,7 +35,7 @@ map dispatch action which is buyCake to props because we need this action in but
 const mapDispatchToProps = dispatch => {
     //arrow function accepting parameter name called number
     return {
-        buyCake: (number) => dispatch(buyCake(number))
+        buyCakePropFunc: (number) => dispatch(buyCake(number))
     }
 }
 
